@@ -10,11 +10,11 @@ local directIni = "moonloader\\oneversion.ini"
 local mainIni = inicfg.load(nil, directIni)
 local stateIni = inicfg.save(mainIni, directIni)
 update_state = false
-local script_vers = 1
-local script_vers_text = "1.00"
+local script_vers = 2
+local script_vers_text = "1.05"
 local update_url = "https://raw.githubusercontent.com/ReyesFam/oneversion/master/update.ini"
 local update_path = getWorkingDirectory() .. "/update.ini"
-local script_url = ""
+local script_url = "https://raw.githubusercontent.com/ReyesFam/oneversion/3584b5855c36cbe4eaa20bc08b704d74c12b7bf3/oneversion.lua"
 local script_path = thisScript().path
 local tag = "OneVersion"
 
@@ -102,6 +102,9 @@ function imgui.OnDrawFrame()
 		 imgui.Text(u8"Создатель скрипта")
 		 imgui.Text("Leonardo_Reyes")
 	  end
+		if imgui.CollapsingHeader(u8"Обновление") then
+			imgui.Text(u8"Загружена последняя версия обновления")
+		 end
 		imgui.SetCursorPosX(25)
     imgui.SetCursorPosY(260)
 		if imgui.Button(u8"Перезагрузить скрипт") then
